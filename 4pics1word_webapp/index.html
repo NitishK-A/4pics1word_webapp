@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <title>4pics1word</title>
+  </head>
+  <body>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <img id="head" src="./images/head.png"  height="100" width="150">
+
+
+    <div class="grid">
+        <img id="pic1" align="left" src="./images/water1.jpeg" height="200" width="300">
+        <img id="pic2" align="right" src="./images/water2.jpeg" height="200" width="300">
+        <img id="pic3" align="left" src="./images/water3.jpg" height="200" width="300">
+        <img id="pic4" align="right" src="./images/water4.jpeg" height="200" width="300">
+
+      <form name="option" id="form">
+        <input  type="text" id="submit" name="display" >
+        
+
+        <input type="button"  class="btn btn-warning" id="go" value="Submit" onclick="hello()" >
+        
+        <input type="button" class="btn btn-warning" id="b1" value="A" onclick="document.option.display.value+='A'">
+        <input type="button" class="btn btn-warning" id="b" value="P" onclick="document.option.display.value+='P'">
+        <input type="button" class="btn btn-warning" id="b" value="L" onclick="document.option.display.value+='L'">
+        <input type="button" class="btn btn-warning" id="b" value="N" onclick="document.option.display.value+='N'">
+        <input type="button" class="btn btn-warning" id="b" value="W" onclick="document.option.display.value+='W'">
+        <input type="button" class="btn btn-warning" id="b" value="I" onclick="document.option.display.value+='I'">
+        <input type="button" class="btn btn-warning" id="b" value="Z" onclick="document.option.display.value+='Z'">
+        <input type="button" class="btn btn-warning" id="b" value="O" onclick="document.option.display.value+='O'">
+
+        <br>
+        
+        <input type="button" class="btn btn-warning" id="b21" value="E" onclick="document.option.display.value+='E'">
+        <input type="button" class="btn btn-warning" id="b2" value="K" onclick="document.option.display.value+='K'">
+        <input type="button" class="btn btn-warning" id="b2" value="H" onclick="document.option.display.value+='H'">
+        <input type="button" class="btn btn-warning" id="b2" value="T" onclick="document.option.display.value+='T'">
+        <input type="button" class="btn btn-warning" id="b2" value="E" onclick="document.option.display.value+='E'">
+        <input type="button" class="btn btn-warning" id="b2" value="R" onclick="document.option.display.value+='R'">
+        <input type="button" class="btn btn-warning" id="b2" value="M" onclick="document.option.display.value+='M'">
+        <input type="button" class="btn btn-warning" id="b23" value="Y" onclick="document.option.display.value+='Y'">
+        <br>
+
+        
+
+        
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" id="hint" data-target="#exampleModalCenter">
+  Hint
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Hint</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        hint-1 : Remove 3 letters that are unnecessary !!<br>
+        hint-2 : View the first letter of the answer !
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="button" class="btn btn-secondary"  value="Hint-1" data-dismiss="modal" onclick="remove()">
+        <input type="button" class="btn btn-secondary" data id="snackbar1" data-dismiss="modal" value="Hint-2" onclick="showletter() ">
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div id="snackbar">First letter of the answer is - W </div>
+
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+        
+      </form>
+
+      <script >
+        
+        function hello(){
+          
+          var x=document.getElementById('form');
+          var y=x.elements["display"].value;
+          if (y=="WATER"){
+            //alert("true");
+
+            document.getElementById('pic1').src='./images/think1.png';
+            document.getElementById('pic2').src='./images/think2.jpg';
+            document.getElementById('pic3').src='./images/think3.jpg';
+            document.getElementById('pic4').src='./images/think4.jpeg';
+            
+            document.getElementById('snackbar').innerHTML="First letter of the answer is - T";
+            //alert();
+            document.option.display.value="";
+          }else if (y=="THINK") {
+            //alert("true")
+            document.getElementById('pic1').src='./images/w1.jpeg';
+            document.getElementById('pic2').src='./images/w2.jpg';
+            document.getElementById('pic3').src='./images/w3.jpg';
+            document.getElementById('pic4').src='./images/w4.png';
+            document.option.display.value="";
+            document.getElementById('snackbar').innerHTML="First letter of the answer is - W";
+          }else if (y=="WHEEL"){
+            document.getElementById('pic1').src='./images/home1.jpg';
+            document.getElementById('pic2').src='./images/home2.jpeg';
+            document.getElementById('pic3').src='./images/home3.jpg';
+            document.getElementById('pic4').src='./images/home4.jpeg';
+            document.option.display.value="";
+            document.getElementById('snackbar').innerHTML="First letter of the answer is - H";
+          }else if (y=="HOME"){
+             document.getElementById('pic1').src='./images/home1.jpg';
+            document.getElementById('pic2').src='./images/home2.jpeg';
+            document.getElementById('pic3').src='./images/home3.jpg';
+            document.getElementById('pic4').src='./images/home4.jpeg';
+            document.option.display.value="";
+            alert("GAME ENDS");
+            
+          }
+          else{
+            alert("Incorrect Answer");
+            document.option.display.value="";
+            
+
+
+        }
+      }
+      
+      
+
+      
+
+      function remove(){
+        document.getElementById("b2").style.display = "none";    
+        document.getElementById("b23").style.display = "none"; 
+        document.getElementById("b").style.display = "none";   
+      }
+
+
+      function showletter() {
+      var x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+      }
+
+      function popitup(url,windowName) {
+       newwindow=window.open(url,windowName,'height=200,width=150');
+       if (window.focus) {newwindow.focus()}
+       return false;
+     }
+
+
+      </script>
+
+    </div>
+
+    <button onclick="refresh()" class="btn btn-danger" id="last">Start Again !</button>
+    <script>
+      function refresh() {
+        location.reload();
+      }
+    </script>
+
+     
+
+
+
+  </body>
+</html>
